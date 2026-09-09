@@ -43,12 +43,6 @@ C5TAKO™ is a portable Wi-Fi (2.4/5 GHz) and Bluetooth LE testing device for se
 
 ### Latest Firmware
 
-Download the latest firmware `.bin` file from the [Releases](https://github.com/ZipherCyprex/C5TAKO-Project/releases) page.
-
-<br>
-
-### Flashing Methods
-
 ### 🌐 Option 1: Firmware Flasher (Easiest)
 
 Use the official web-based flasher - no installation required:
@@ -167,6 +161,79 @@ The external module board requires additional connections and may not be include
 <br>
 
 > **Warning**: C5TAKO™ is **NOT waterproof**. Avoid moisture and handle with care during assembly.
+
+<br>
+<br>
+
+## 🟢 Feature list
+
+### WIFI
+- AP Scan
+- Station Scan
+- Packet Monitor
+- PCAP Capture
+- PCAP Crack
+- Channel Analyzer
+- Hidden AP Finder
+- Network Map
+- Mini Nmap
+- Whitelist
+- Deauthentication
+- Beacon Spam
+- Captive Portal
+
+### WIFI Device Detection
+- Drone Remote ID
+- Pwnagotchi
+- Wi-Fi Pineapple
+- ESP-NOW
+- Wi-Fi Mesh
+- Attack Alert
+- 7+ more... 
+
+### BLE
+- BLE Monitor 
+- BLE Inspector 
+- Model Finder 
+- BLE Spam (Raw+Pkt) 
+- Bad BLE
+- Ducky Script
+- BLE HID Composite
+- AirTag Trigger
+
+### BLE Device Detection
+- Apple Devices
+- AirTag
+- Samsung SmartTag
+- Tile
+- Android Fast Pair
+- Flipper
+- Pwnagotchi
+- Meta Ray-Ban
+- Card Skimmer Detection
+- 20+ more...
+
+### STORAGE & FILES
+- LittleFS
+- SD Card
+- Web File Manager
+- Serial File Transfer
+- BLE File Transfer
+- PCAP Storage
+- Portal Data Storage
+- Recovery Password Storage
+
+### SYSTEM
+- Display Menu
+- USB Serial Commands
+- BLE Serial Commands
+- Display Stream Buffer 
+- Settings
+- Battery Monitor
+
+### GAMES
+- Dino Game
+- Maze Game
 
 <br>
 <br>
