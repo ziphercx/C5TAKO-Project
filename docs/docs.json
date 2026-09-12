@@ -35,10 +35,9 @@
     "library": "lucide"
   },
   "background": {
-    "decoration": "windows",
     "color": {
-      "light": "#F8F7FC",
-      "dark": "#09090c"
+      "light": "#FAFAFA",
+      "dark": "#080808"
     }
   },
   "styling": {

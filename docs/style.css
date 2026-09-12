@@ -1,12 +1,17 @@
 :root {
+  --background-light: 250 250 250;
+  --c5-logo-filter: brightness(0.15) grayscale(1);
   --c5-purple: #7b21f5;
-  --c5-purple-soft: #a855f7;
   --c5-ink: #0d0b10;
-  --c5-menu-bg: rgba(255, 255, 255, 0.32);
+  --c5-menu-bg: rgb(0 0 0 / 3%);
   --c5-menu-border: rgba(13, 11, 16, 0.08);
-  --c5-menu-active-border: rgba(13, 11, 16, 0.08);
+  --c5-menu-active-border: rgb(0 0 0 / 6%);
+  --c5-menu-active-bg: rgb(0 0 0 / 6.8%);
+  --c5-menu-active-text: rgb(0 0 0 / 88%);
+  --c5-toc-active-text: rgb(0 0 0 / 84%);
+  --c5-toc-active-track: rgb(0 0 0 / 38%);
   --c5-toc-track: rgba(13, 11, 16, 0.12);
-  --c5-callout-bg: #f5f3f8;
+  --c5-callout-bg: rgb(0 0 0 / 3%);
   --c5-callout-border: rgba(13, 11, 16, 0.1);
   --c5-code-bg: rgba(40, 42, 54, 0.08);
 }
@@ -15,18 +20,18 @@ html.dark,
 html[data-theme="dark"],
 body.dark,
 body[data-theme="dark"] {
-  --c5-menu-bg: rgba(0, 0, 0, 0.22);
-  --c5-menu-border: rgba(255, 255, 255, 0.08);
+  --c5-logo-filter: none;
+  --c5-menu-bg: rgb(255 255 255 / 3%);
+  --c5-menu-border: rgba(255, 255, 255, 0.048);
   --c5-menu-active-border: rgba(255, 255, 255, 0.06);
+  --c5-menu-active-bg: rgb(255 255 255 / 6.8%);
+  --c5-menu-active-text: rgb(255 255 255 / 88%);
+  --c5-toc-active-text: rgb(255 255 255 / 84%);
+  --c5-toc-active-track: rgb(255 255 255 / 38%);
   --c5-toc-track: rgba(255, 255, 255, 0.12);
-  --c5-callout-bg: #17171d;
+  --c5-callout-bg: rgb(255 255 255 / 3%);
   --c5-callout-border: rgba(255, 255, 255, 0.1);
   --c5-code-bg: rgba(40, 42, 54, 0.45);
-}
-
-/* Keep Mintlify's windows decoration visible, but make the background glow subtle. */
-#background-color ~ span[style*="gradient"] {
-  opacity: 0.2 !important;
 }
 
 #navbar {
@@ -45,6 +50,7 @@ body[data-theme="dark"] {
 
 #sidebar-content {
   box-sizing: border-box;
+  top: 20px;
   height: calc(100% - 40px);
   min-height: 0;
   padding: 10px 8px;
@@ -54,17 +60,44 @@ body[data-theme="dark"] {
   /* box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.02); */
 }
 
-#sidebar-content nav a {
-  border: 1px solid transparent;
-  border-radius: 8px;
-  transition: background-color 120ms ease, border-color 120ms ease;
+/* Replace Mintlify's sticky top fade with ordinary spacing. */
+#sidebar-content .sticky.top-0.h-8.pointer-events-none {
+  display: none;
 }
 
-#sidebar-content nav a:hover,
-#sidebar-content nav a[aria-current="page"],
-#sidebar-content li[data-active] > a {
-  background: rgba(123, 33, 245, 0.08);
+#sidebar-content #navigation-items {
+  margin-top: 0.5rem;
+}
+
+#sidebar-content a {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+#sidebar-content a:hover,
+#sidebar-content a[aria-current="page"],
+#sidebar-content li[data-active="true"] > a {
+  background: var(--c5-menu-active-bg);
   border-color: var(--c5-menu-active-border);
+}
+
+#sidebar-content a[aria-current="page"],
+#sidebar-content li[data-active="true"] > a {
+  color: var(--c5-menu-active-text);
+  font-weight: 600;
+  text-shadow: none;
+}
+
+/* Change link text only; Mintlify keeps the active icon in the primary color. */
+#table-of-contents-content a {
+  text-shadow: none !important;
+}
+
+#table-of-contents-content li[data-active="true"] > a,
+#table-of-contents-content a[aria-current="location"] {
+  color: var(--c5-toc-active-text);
+  font-weight: 700;
 }
 
 /* เส้นติดตามตำแหน่งของหัวข้อใน On this page */
@@ -85,8 +118,8 @@ body[data-theme="dark"] {
   background: var(--c5-toc-track);
 }
 
-/* เส้นสีม่วงจะเลื่อนตามหัวข้อที่กำลังอ่าน */
-#table-of-contents-content > li[data-active]::before {
+/* เส้นโทนกลางที่สว่างกว่าราง จะเลื่อนตามหัวข้อที่กำลังอ่าน */
+#table-of-contents-content > li[data-active="true"]::before {
   content: "";
   position: absolute;
   top: 0;
@@ -94,8 +127,8 @@ body[data-theme="dark"] {
   left: -11px;
   width: 2px;
   border-radius: 999px;
-  background: var(--c5-purple-soft);
-  box-shadow: 0 0 8px rgba(168, 85, 247, 0.28);
+  background: var(--c5-toc-active-track);
+  /* box-shadow: 0 0 8px rgba(168, 85, 247, 0.28); */
 }
 
 #page-title,
@@ -146,6 +179,12 @@ pre {
   box-shadow: none !important;
 }
 
+/* White wordmarks need a dark counterpart on the neutral light surface. */
+#navbar img.nav-logo,
+#content img[src="/images/zipher-carni.png"] {
+  filter: var(--c5-logo-filter);
+}
+
 .media-todo {
   border-left: 3px solid var(--c5-purple);
   padding-left: 1rem;
@@ -158,6 +197,7 @@ pre {
   }
 
   #sidebar-content {
+    top: 14px;
     height: calc(100% - 28px);
     padding: 8px 6px;
     border-radius: 10px;
