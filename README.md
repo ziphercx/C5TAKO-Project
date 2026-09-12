@@ -1,6 +1,6 @@
 <div align="center">
 
-# C5TAKO™
+<img src="docs/images/Zipher_c5tako.png" alt="C5TAKO Device" width="400"/>
 
 ### Open-Source Wi-Fi & Bluetooth Testing Device
 
@@ -8,8 +8,6 @@
 [![Firmware Release](https://img.shields.io/badge/Firmware-Latest-green.svg)](https://github.com/ZipherCyprex/C5TAKO-Project/releases)
 [![Documentation](https://img.shields.io/badge/Docs-Online-orange.svg)](https://c5tako.ziphers.space)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da.svg)](https://discord.gg/UXV38s6wAc)
-
-<img src="docs/images/Zipher_c5tako.png" alt="C5TAKO Device" width="400"/>
 
 **Firmware releases and documentation for DIY builders and developers**
 
