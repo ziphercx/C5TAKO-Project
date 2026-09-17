@@ -57,33 +57,6 @@ Use the official web-based flasher - no installation required:
 
 <br>
 
-### 🔧 Option 2: ESP Web Tool
-
-Use [ESP Web Tool](https://espressif.github.io/esptool-js/) for manual flashing:
-
-**Steps:**
-1. Download the `.bin` file from releases
-2. Open ESP Web Tool in a Chromium-based browser (Chrome, Edge, etc.)
-3. Connect your ESP32-C5 via USB-C
-4. Click "Connect" and select your device
-5. Set flash offset to `0x0`
-6. Select the downloaded `.bin` file
-7. Click "Program" to flash
-
-<br>
-
-### ⚙️ Option 3: Command Line (esptool)
-
-For advanced users who prefer terminal:
-
-```bash
-esptool.py --chip esp32c5 --port COM3 write_flash 0x0 firmware.bin
-```
-
-Replace `COM3` with your device's serial port (`/dev/ttyUSB0` on Linux/Mac).
-
-<br>
-
 **Troubleshooting:** If flashing fails, see the [Firmware Update Guide](https://c5tako.ziphers.space/getting-started/update-firmware) or ask for help in our [Discord](https://discord.gg/UXV38s6wAc).
 
 <br>
@@ -99,6 +72,10 @@ Replace `COM3` with your device's serial port (`/dev/ttyUSB0` on Linux/Mac).
 
 > **Hardware profile**: The pinout below is for the C5TAKO XIAO ESP32-C5 build.
 
+<br>
+<img width="auto" height="335" alt="circuit_image" src="https://github.com/user-attachments/assets/3f286e54-0167-40b0-b043-c113750e6797" />
+<br>
+View in Cirkit: https://app.cirkitdesigner.com/project/33474cff-73b3-4948-affc-d03ec0f50907
 <br>
 
 ### Pin Assignments
