@@ -73,7 +73,7 @@ Use the official web-based flasher - no installation required:
 > **Hardware profile**: The pinout below is for the C5TAKO XIAO ESP32-C5 build.
 
 <br>
-<img width="auto" height="335" alt="circuit_image" src="https://github.com/user-attachments/assets/3f286e54-0167-40b0-b043-c113750e6797" />
+<img width="auto" height="400" alt="circuit_image (1)" src="https://github.com/user-attachments/assets/5ca9076a-09d7-4be2-9e2d-46f24b43801f" />
 <br>
 View in Cirkit: https://app.cirkitdesigner.com/project/33474cff-73b3-4948-affc-d03ec0f50907
 <br>
